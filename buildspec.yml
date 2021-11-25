@@ -1,0 +1,11 @@
+version: 0.1
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.16.4
+  build:
+    commands:
+      - echo Building the Go code...
+      - cd $CODEBUILD_SRC_DIR/golang-app
+      - go build hello.go
