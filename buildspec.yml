@@ -7,5 +7,5 @@ phases:
   build:
     commands:
       - echo Building the Go code...
-      - cd $CODEBUILD_SRC_DIR/golang-app
+      - cd $CODEBUILD_SRC_DIR/golang-server
       - go build hello.go
