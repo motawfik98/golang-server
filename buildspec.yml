@@ -7,6 +7,5 @@ phases:
   build:
     commands:
       - echo Building the Go code...
-      - cd $CODEBUILD_SRC_DIR
-      - go get
+      - go get ./...
       - go build
