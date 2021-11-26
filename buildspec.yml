@@ -20,4 +20,3 @@ phases:
   post_build:
     commands:
       - echo Start post_build...
-      - aws s3 cp $CODEBUILD_SRC_DIR/main s3://bucket-name/
