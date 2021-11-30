@@ -1,11 +1,22 @@
 version: 0.2
 
+env:
+  variables:
+    GO_VERSION: 1.16.4
 phases:
   install:
-    runtime-versions:
-      golang: 1.14
+    commands:
+      - wget https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz
+      - tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+      - export PATH="/usr/local/go/bin:$PATH" && export GOPATH="$HOME/go" && export PATH="$GOPATH/bin:$PATH"
+      - go get -v -u ***GO_MODULES***
+  pre_build:
+    commands:
+      - echo Start pre_build...
   build:
     commands:
-      - echo Building the Go code...
-      - go get ./...
-      - go build
+      - echo Start build...
+      - cd $CODEBUILD_SRC_DIR && go build
+  post_build:
+    commands:
+      - echo Start post_build...
