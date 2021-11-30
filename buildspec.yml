@@ -19,4 +19,4 @@ phases:
       - echo Start post_build...
 artifacts:
   files:
-    - '**/*'
+    - 'devops-cicd'
