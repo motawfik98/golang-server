@@ -3,14 +3,10 @@ version: 0.2
 env:
   variables:
     GO_VERSION: 1.16.4
-  secrets-manager:
-    DOCKERHUB_USERNAME: "dockerhub/credentials:username"
-    DOCKERHUB_PASS: "dockerhub/credentials:password"
 phases:
   install:
     commands:
       - echo Installing...
-      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
       - go mod download
   pre_build:
     commands:
