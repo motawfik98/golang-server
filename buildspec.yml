@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     GO_VERSION: 1.16.4
+  secrets-manager:
     DOCKERHUB_USERNAME: "/dockerhub/credentials:username"
     DOCKERHUB_PASS: "/dockerhub/credentials:password"
 phases:
