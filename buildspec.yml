@@ -21,3 +21,5 @@ phases:
 artifacts:
   files:
     - 'devops-cicd'
+    - 'appspec.yml'
+    - 'scripts/*'
